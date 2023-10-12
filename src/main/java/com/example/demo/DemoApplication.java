@@ -19,7 +19,6 @@ public class DemoApplication {
 
 @Controller
 class TomcatController {
-
 	@GetMapping("/")
 	public String index() {
 		return "index.html";
