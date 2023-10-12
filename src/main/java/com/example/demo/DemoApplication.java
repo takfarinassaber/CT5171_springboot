@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@SpringBootApplication
 public class DemoApplication {
 	@RequestMapping("/")
 	String home() {
 		return "Hello World!";
 	}
+
 	@RequestMapping("/hello")
 	String home2() {
 		return "Hello World!";
