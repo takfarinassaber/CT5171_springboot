@@ -10,26 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class DemoApplication {
-
-	@RequestMapping(value = "/")
-	public String index() {
-		return "Hello there !";
+	@RequestMapping("/")
+	public String hello1() {
+		return "Hello";
 	}
+
+	@RequestMapping("/hello")
+	public String hello2() {
+		return "Hello Again";
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
 
-	@Controller
-	public static class MyController {
 
-		@RequestMapping("/")
-		public String hello1 () {
-			return "Hello";
-		}
-		@RequestMapping("/hello")
-		public String hello2 () {
-			return "Hello Again";
-		}
-	}
 }
+
