@@ -8,27 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
+@RestController
 public class DemoApplication {
 
-
+	@RequestMapping(value = "/")
+	public String index() {
+		return "Hello there !";
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-}
 
-@Controller
-class TomcatController {
-	@GetMapping("/")
-	public String index() {
-		return "index.html";
-	}
-}
+	@Controller
+	public static class MyController {
 
-@Controller
-class HelloController {
-	@GetMapping("/hello")
-	public String hello() {
-		return "Hello there !";
+		@RequestMapping("/")
+		public String hello1 () {
+			return "Hello";
+		}
+		@RequestMapping("/hello")
+		public String hello2 () {
+			return "Hello Again";
+		}
 	}
 }
