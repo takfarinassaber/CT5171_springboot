@@ -14,7 +14,7 @@ public class DemoApplication {
 		return "Hello World!";
 	}
 	@RequestMapping("/hello")
-	String home() {
+	String home2() {
 		return "Hello World!";
 	}
 
